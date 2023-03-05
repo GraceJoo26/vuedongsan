@@ -1,4 +1,7 @@
 <template>
+  <div class="menu">
+    <a v-for="메뉴 in 메뉴들" :key="메뉴">{{ 메뉴 }}</a>
+  </div>
   <div class="black-bg" v-if="모달창 == true">
       <div class="white-bg">
         <h3>{{ 원룸들[누른거].title }}</h3>
@@ -28,6 +31,7 @@ export default {
       누른거:0,
       모달창:false,
       신고수:[0,0,0,0,0,0],
+      메뉴들:['Home','Store','Contact']
     }
   },
   methods:{
