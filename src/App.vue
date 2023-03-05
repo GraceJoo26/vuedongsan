@@ -2,6 +2,10 @@
   <div class="menu">
     <a v-for="메뉴 in 메뉴들" :key="메뉴">{{ 메뉴 }}</a>
   </div>
+
+  <div></div>
+
+
   <div class="black-bg" v-if="모달창 == true">
       <div class="white-bg">
         <h3>{{ 원룸들[누른거].title }}</h3>
