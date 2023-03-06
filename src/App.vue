@@ -3,12 +3,13 @@
     <a v-for="메뉴 in 메뉴들" :key="메뉴">{{ 메뉴 }}</a>
   </div>
 
-  <div></div>
+  <Discount/>
 
 
   <div class="black-bg" v-if="모달창 == true">
       <div class="white-bg">
         <h3>{{ 원룸들[누른거].title }}</h3>
+        <img :src=" 원룸들[누른거].image" style="width:100%;"/>
         <p>{{ 원룸들[누른거].price }}</p>
         <p>{{ 원룸들[누른거].content }}</p>
         <button @click="모달창 = false">닫기</button>
@@ -26,6 +27,7 @@
 </template>
 <script>
 import data from './assets/oneroom.js';
+import Discount from './Discount.vue';
 
 export default {
   name:'App',
@@ -41,7 +43,7 @@ export default {
   methods:{
   },
   components:{
-
+    Discount,
 }
 }
 </script>
@@ -88,4 +90,5 @@ div{
   width:100%;
   margin-top:40px;
 }
+.discount{padding:10px; background-color: gray; margin:10px; border-radius: 5px;}
 </style>
