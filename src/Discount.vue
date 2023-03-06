@@ -6,6 +6,7 @@
 
 <script>
 export default {
+<<<<<<< HEAD
   name: 'Discount_',
 }
 </script>
