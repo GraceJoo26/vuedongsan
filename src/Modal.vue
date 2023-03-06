@@ -5,7 +5,7 @@
         <img :src=" 원룸들[누른거].image" style="width:100%;"/>
         <p>{{ 원룸들[누른거].price }}</p>
         <p>{{ 원룸들[누른거].content }}</p>
-        <!-- <button @click="모달창 = false">닫기</button> -->
+        <button @click="닫기버튼">닫기</button>
       </div>
   </div>
 </template>
@@ -17,6 +17,11 @@ export default {
       원룸들: Array,
       누른거: Number,
       모달창: Boolean,
+    },
+    methods:{
+      닫기버튼() {
+        this.$emit('closeBtn');
+      }, 
     }
 }
 </script>
