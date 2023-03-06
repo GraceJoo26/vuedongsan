@@ -3,7 +3,7 @@
     <a v-for="메뉴 in 메뉴들" :key="메뉴">{{ 메뉴 }}</a>
   </div>
 
-  <div></div>
+  <Discount/>
 
 
   <div class="black-bg" v-if="모달창 == true">
@@ -26,6 +26,7 @@
 </template>
 <script>
 import data from './assets/oneroom.js';
+import Discount from './Discount.vue';
 
 export default {
   name:'App',
@@ -41,7 +42,7 @@ export default {
   methods:{
   },
   components:{
-
+    Discount,
 }
 }
 </script>
@@ -88,4 +89,10 @@ div{
   width:100%;
   margin-top:40px;
 }
+.discount{
+      background-color: #eee;
+      padding:10px;
+      margin:10px;
+      border-radius: 5px;
+    }
 </style>
