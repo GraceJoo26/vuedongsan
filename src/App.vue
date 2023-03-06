@@ -36,11 +36,8 @@
 <script>
 import data from './assets/oneroom.js';
 import Discount from './Discount.vue';
-<<<<<<< HEAD
-=======
 import Modal from './Modal.vue';
 import Card from './Card.vue';
->>>>>>> 3c1030e38b2b3d96d5a4ebdb5a81660c61f3f6fb
 
 export default {
   name:'App',
@@ -57,13 +54,10 @@ export default {
   methods:{
   },
   components:{
-<<<<<<< HEAD
     Discount,
-=======
     Discount:Discount,
     Modal:Modal,
     Card:Card,
->>>>>>> 3c1030e38b2b3d96d5a4ebdb5a81660c61f3f6fb
 }
 }
 </script>
@@ -110,14 +104,5 @@ div{
   width:100%;
   margin-top:40px;
 }
-<<<<<<< HEAD
-.discount{
-      background-color: #eee;
-      padding:10px;
-      margin:10px;
-      border-radius: 5px;
-    }
-=======
 .discount{padding:10px; background-color: gray; margin:10px; border-radius: 5px;}
->>>>>>> 3c1030e38b2b3d96d5a4ebdb5a81660c61f3f6fb
 </style>
