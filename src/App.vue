@@ -5,16 +5,15 @@
 
   <Discount/>
 
+  <!--자식컴포넌트가 부모가 갖고있는 데이터를 쓰려면?-->
+    <!--1. props로 데이터 전송해야 함
+    1)데이터 보내고
+    2)등록하고
+    3)쓰기
+    4)v-bind = :
+    -->
+  <Modal :원룸들="원룸들" :누른거="누른거" :모달창="모달창"/>
 
-  <div class="black-bg" v-if="모달창 == true">
-      <div class="white-bg">
-        <h3>{{ 원룸들[누른거].title }}</h3>
-        <img :src=" 원룸들[누른거].image" style="width:100%;"/>
-        <p>{{ 원룸들[누른거].price }}</p>
-        <p>{{ 원룸들[누른거].content }}</p>
-        <button @click="모달창 = false">닫기</button>
-      </div>
-  </div>
   <div v-for="(매물,i) in 원룸들" :key="i" >
     <img :src="원룸들[i].image" alt="" class="room-img">
     <div>
@@ -28,6 +27,7 @@
 <script>
 import data from './assets/oneroom.js';
 import Discount from './Discount.vue';
+import Modal from './Modal.vue';
 
 export default {
   name:'App',
@@ -44,6 +44,7 @@ export default {
   },
   components:{
     Discount,
+    Modal,
 }
 }
 </script>
