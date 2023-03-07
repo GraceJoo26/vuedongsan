@@ -1,14 +1,13 @@
 <template>
-
-    <div v-if="1==2">
-    안녕하세요
-    </div>
-    <div v-else-if="1==3">
-    안녕하세요2
-    </div>
-    
-    
-    
+<!--데이터바인딩은 밑에 데이터 있어야 함-->
+ 
+  
+    <!--
+      =======축약해둔 컴포넌트 쓰는 법 -- 많이 안만들고 만들거만 만드는게 좋음
+      1. vue 파일 import해오고
+      2. 등록하고
+      3. 쓰기-->
+    <Discount>
     
     <!--
       모달창 디자인
@@ -59,7 +58,7 @@
     <script>
     import data from './assets/oneroom.js';
     //import {변수1, 변수2} from 경로
-    
+    import Discount from './Discount';
     
     export default {
       name: 'App',
@@ -81,8 +80,12 @@
           this.신고수 +=1;
         }
       },//this는 위에 data를 지칭함. 함수안에 데이터 쓸땐 this.데이터명
+      //축약해둔 컴포넌트 쓰는 법
+      //1. vue파일 import해오고
+      //2. components:{}에 등록하고
+      //3. 쓰기
       components:{
-    
+        Discount,
       }
     }
     </script>
@@ -128,6 +131,12 @@
     .room-img{
       width:100%;
       margin-top:40px;
+    }
+    .discount{
+      background-color: #eee;
+      padding:10px;
+      margin:10px;
+      border-radius: 5px;
     }
     </style>
     <!--자식컴포넌트가 부모가 갖고있는 데이터를 쓰려면?-->

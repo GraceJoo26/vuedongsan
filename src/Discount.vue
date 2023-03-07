@@ -1,12 +1,13 @@
 <template>
   <div class="discount">
-    <p>20% discount!</p>
+    <h4>지금 결제하면 20% 할인</h4>
   </div>
 </template>
 
 <script>
 export default {
- name:'Discount_',
+<<<<<<< HEAD
+  name: 'Discount_',
 }
 </script>
 
