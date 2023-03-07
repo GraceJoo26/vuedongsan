@@ -54,7 +54,6 @@ export default {
   methods:{
   },
   components:{
-    Discount,
     Discount:Discount,
     Modal:Modal,
     Card:Card,
