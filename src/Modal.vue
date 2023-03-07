@@ -3,8 +3,10 @@
       <div class="white-bg">
         <h3>{{ 원룸들[누른거].title }}</h3>
         <img :src=" 원룸들[누른거].image" style="width:100%;"/>
-        <p>{{ 원룸들[누른거].price }}</p>
         <p>{{ 원룸들[누른거].content }}</p>
+        <input v-model="month">
+        <!--@input="month = $event.target.value 대신 v-model=""-->
+        <p>{{ month }}개월 선택함 : {{ 원룸들[누른거].price * month }}</p>
         <button @click="닫기버튼">닫기</button>
       </div>
   </div>
@@ -13,6 +15,11 @@
 <script>
 export default {
     name:'Modal_',
+    data(){
+      return{
+        month : 1,
+      }
+    },
     props:{
       원룸들: Array,
       누른거: Number,
