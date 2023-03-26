@@ -4,6 +4,8 @@
   </div>
 
   <Discount/>
+  <button @click="priceSort">가격순정렬</button>
+  <button @click="sortBack">빠꾸버튼</button>
 
   <!--자식컴포넌트가 부모가 갖고있는 데이터를 쓰려면?-->
     <!--1. props로 데이터 전송해야 함
@@ -46,8 +48,9 @@ export default {
   name:'App',
   data(){
     return{ 
+      원룸들오리지널:[...data],// filter원본보존
       오브젝트:{ name:'kim',age:20},
-      원룸들:data,
+      원룸들:data, //sort시 사용(복사본)
       누른거:0,
       모달창:false,
       신고수:[0,0,0,0,0,0],
@@ -55,6 +58,20 @@ export default {
     }
   },
   methods:{
+    //sort()하면 원본이 변형, map(), filter()등은 원본을 보존해줌
+    sortBack(){
+      this.원룸들=[...this.원룸들오리지널];
+    },
+    priceSort(){
+      //sort
+      //var array=[3,5,2];
+      // array.sort(function(a,b){
+      //  return a-b   ->a-b>0, a를 오른쪽, a-b<0 a를 왼쪽으로
+      //  }); -> 2,3,5로 정렬됨 
+      this.원룸들.sort(function(a,b){
+        return a.price-b.price
+      })
+    }
   },
   components:{
     Discount:Discount,
