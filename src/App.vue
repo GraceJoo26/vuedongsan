@@ -15,8 +15,11 @@
         1) 작명 = "문자자료"
         2) :작명= "숫자자료"
     -->
-  <Modal :원룸들="원룸들" :누른거="누른거" :모달창="모달창" @closeBtn="모달창=false"/>
-
+   <!--div class="start" :class="{end : 모달창}"-->
+   <transition name="fade">
+    <Modal :원룸들="원룸들" :누른거="누른거" :모달창="모달창" @closeBtn="모달창=false"/>
+  </transition>
+  <!--/div-->
 
 <!-- :작명 = 데이터[몇번째]  -->
   <Card 
@@ -104,4 +107,32 @@ div{
   margin-top:40px;
 }
 .discount{padding:10px; background-color: gray; margin:10px; border-radius: 5px;}
+.start{
+  opacity:0;
+  transition:all 1s;
+}
+.end{
+  opacity:1;
+  }
+
+  /*시작시 작명-enter-from, 끝나면 enter-to*/
+  .fade-enter-from{
+    transform: translateY(-1000px);
+  }
+  .fade-enter-active{
+    transition:all 1s;
+  }
+  .fade-enter-to{
+    transform: translateY(0px);
+  }
+  /*퇴장애니메이션*/
+  .fade-leave-from{
+    transform: translateY(0px);
+  }
+  .fade-leave-active{
+    transition:all 1s;
+  }
+  .fade-leave-to{
+    transform: translateY(-1000px);
+  }
 </style>

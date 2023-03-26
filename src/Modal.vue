@@ -25,9 +25,9 @@ export default {
       month(a){
         if( a >= 13){
           alert('13이상 입력하지마셈')
-        } else if( a == char ){
+        } /* else if( a == charactor ){
           alert('문자사용금지')
-        }
+        } */
         //month라는 데이터가 변할 때 마다 여기있는 코드가 실행됨
       }   
     },
