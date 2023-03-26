@@ -4,7 +4,8 @@
   </div>
 
   <Discount/>
-  <button @click="priceSort">가격순정렬</button>
+  <button @click="priceSort">낮은가격순정렬</button>
+  <button @click="priceDownSort">높은가격순정렬</button>
   <button @click="sortBack">빠꾸버튼</button>
 
   <!--자식컴포넌트가 부모가 갖고있는 데이터를 쓰려면?-->
@@ -59,8 +60,11 @@ export default {
   },
   methods:{
     //sort()하면 원본이 변형, map(), filter()등은 원본을 보존해줌
-    sortBack(){
-      this.원룸들=[...this.원룸들오리지널];
+    
+    priceDownSort(){
+      this.원룸들.sort(function(a,b){
+        return b.price-a.price
+      })
     },
     priceSort(){
       //sort
@@ -71,7 +75,10 @@ export default {
       this.원룸들.sort(function(a,b){
         return a.price-b.price
       })
-    }
+    },
+    sortBack(){
+      this.원룸들 = [...this.원룸들오리지널];
+    },
   },
   components:{
     Discount:Discount,
