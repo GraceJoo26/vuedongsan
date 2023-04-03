@@ -148,12 +148,12 @@ export default {
   },
  */
 //const number = document.getElementsByClassName('number');
-mounted(){
+/* mounted(){
   setInterval(()=>{
     (number -1)
   },1000);
 },
-
+ */
   components:{
     Discount:Discount,
     Modal:Modal,
